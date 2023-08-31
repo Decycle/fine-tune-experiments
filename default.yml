@@ -1,0 +1,68 @@
+base_model: ../models/wizard_vicuna_13b
+base_model_config: ../models/wizard_vicuna_13b
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+
+load_in_8bit: false
+load_in_4bit: true
+strict: false
+
+# datasets:
+#   - path: json
+#     data_files: datasets/linear_function_int.json
+#     type: alpaca
+# dataset_prepared_path: last_run_prepared
+val_set_size: 0.01
+# output_dir: ./qlora-out
+
+adapter: qlora
+lora_model_dir:
+
+sequence_len: 512
+max_packed_sequence_len: 512
+lora_r: 16
+lora_alpha: 64
+lora_dropout: 0.1
+lora_target_modules:
+lora_target_linear: true
+lora_fan_in_fan_out:
+
+wandb_project:
+wandb_watch:
+wandb_run_id:
+wandb_log_model:
+
+gradient_accumulation_steps: 4
+micro_batch_size: 4
+num_epochs: 1
+optimizer: paged_adamw_32bit
+lr_scheduler: cosine
+learning_rate: 0.0002
+
+train_on_inputs: false
+group_by_length: false
+bf16: true
+fp16: false
+tf32: false
+
+gradient_checkpointing: true
+early_stopping_patience:
+resume_from_checkpoint:
+local_rank:
+logging_steps: 1
+xformers_attention: true
+flash_attention:
+
+# warmup_steps: 100
+# eval_steps: 100
+save_steps:
+debug:
+deepspeed:
+weight_decay: 0.0
+fsdp:
+fsdp_config:
+special_tokens:
+  bos_token: "<s>"
+  eos_token: "</s>"
+  unk_token: "<unk>"
+  pad_token: "<pad>"

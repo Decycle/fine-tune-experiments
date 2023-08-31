@@ -1,0 +1,8 @@
+__pycache__
+axolotl/models/*
+axolotl/training/datasets/*
+axolotl/training/last_run_prepared/*
+axolotl/training/qlora/*
+
+env/
+.env
