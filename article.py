@@ -220,21 +220,21 @@ def inference(instruction):
 if __name__ == '__main__':
 
     # get_training_data()
-    cfg = get_cfg(use_lora=False)
-    setup(cfg)
+    # cfg = get_cfg(use_lora=False)
+    # setup(cfg)
 
-    with open("article.json") as f:
-        trainning_data = json.load(f)
-    train(trainning_data)
+    # with open("article.json") as f:
+    #     trainning_data = json.load(f)
+    # train(trainning_data)
     # old_result = inference(
     #     "What do you know about the recent Congress's whisteblower's testimony on UFOs?")
     # cfg = get_cfg(use_lora=True)
     # setup(cfg)
-    # result = inference(
-    #     "What do you know about the recent Congress's whisteblower's testimony on UFOs?")
+    result = inference(
+        "What do you know about the recent Congress's whisteblower's testimony on UFOs?")
 
     # print("Old Result:", old_result)
-    # print("New Result:", result)
+    print("New Result:", result)
     # old_result = trainer.inference(
     #     "What do you know about the recent Congress's whisteblower's testimony on UFOs?")
     # # trainer.train("datasets/article.json")

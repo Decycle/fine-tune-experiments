@@ -210,6 +210,7 @@ class Trainer():
             print("Please run setup first")
             return
 
+        os.mkdir("datasets")
         train_path = f"datasets/{self.cfg['lora_name']}_train.json"
         with open(train_path, "w") as f:
             json.dump(trainning_data, f)

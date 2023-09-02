@@ -1,5 +1,5 @@
-base_model: ../models/wizard_vicuna_13b
-base_model_config: ../models/wizard_vicuna_13b
+base_model: TheBloke/Wizard-Vicuna-13B-Uncensored-HF
+base_model_config: TheBloke/Wizard-Vicuna-13B-Uncensored-HF
 model_type: AutoModelForCausalLM
 tokenizer_type: AutoTokenizer
 
