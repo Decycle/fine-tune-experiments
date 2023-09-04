@@ -220,8 +220,8 @@ def inference(instruction):
 if __name__ == '__main__':
 
     # get_training_data()
-    # cfg = get_cfg(use_lora=False)
-    # setup(cfg)
+    cfg = get_cfg(use_lora=False)
+    setup(cfg)
 
     # with open("article.json") as f:
     #     trainning_data = json.load(f)
